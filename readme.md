@@ -41,6 +41,6 @@ Complete the implementation of your Wiki encyclopedia. You must fulfill the foll
 
 7. **Markdown to HTML Conversion**: On each entry’s page, any Markdown content in the entry file should be converted to HTML before being displayed to the user. You may use the python-markdown package to perform this conversion, installable via `pip install Markdown`.
 ###### Hints
-    By default, when substituting a value in a Django template, Django HTML-escapes the value to avoid outputting un``intended HTML. If you want to allow for an HTML string to be outputted, you can do so with the safe filter (as by adding |safe after the variable name you’re substituting).
+By default, when substituting a value in a Django template, Django HTML-escapes the value to avoid outputting un``intended HTML. If you want to allow for an HTML string to be outputted, you can do so with the safe filter (as by adding |safe after the variable name you’re substituting).
 
 [1]: https://www.w3schools.com/tags/tag_textarea.asp "textarea"
