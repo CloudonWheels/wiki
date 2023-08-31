@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-import markdown, random
+import markdown
+import random
 from . import util
 
 
@@ -22,13 +23,17 @@ def index(request):
             })
 
 def entry(request, title):
-    markdwon= util.get_entry(title)
+    markdown_content= util.get_entry(title)   
+    if markdown_content:
+        rendered_html= markdown.html.markdown(markdown_content)
+    else:
+        rendered_html= None
+
     return render(request, "encyclopedia/entry.html", {
-        "data": markdown.html.markdown(markdown) 
-        if markdwon 
-        else None,
+        "data": rendered_html,
         "title": title
-    })
+   })    
+    
     
 
 #for creating new page
