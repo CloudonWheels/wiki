@@ -25,7 +25,7 @@ def index(request):
 def entry(request, title):
     markdown_content= util.get_entry(title)   
     if markdown_content:
-        rendered_html= markdown.html.markdown(markdown_content)
+        rendered_html= markdown.markdown(markdown_content)
     else:
         rendered_html= None
 
