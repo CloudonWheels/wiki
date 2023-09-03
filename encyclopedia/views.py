@@ -22,7 +22,7 @@ def index(request):
             "entries": util.list_entries()
             })
 
-def entry(request, title):
+def entrypage(request, title):
     markdown_content= util.get_entry(title)   
     if markdown_content:
         rendered_html= markdown.markdown(markdown_content)
