@@ -1,0 +1,27 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="row">
+
+    <div class="col-sm-9 col-10 data">
+        {% if data %}
+            {{ data|safe }}
+        {% else %}
+            <h1>Error 404 Page not found</h1>  
+        {% endif %}
+    </div>
+        <div class="col-sm-5 col-11 side-nav-links">
+            {% if data %}
+                <p><a href="{% url 'edit' title %}">Edit This Page</a></p>
+            {% endif %}
+        </div>
+    </div>
+
+    </div>
+
+{% endblock %}
